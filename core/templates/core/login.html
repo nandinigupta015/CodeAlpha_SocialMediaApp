@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Vibe</title>
+  <link rel="stylesheet" href="{% static 'core/style.css' %}">
+</head>
+
+<body>
+  <div class="bg-gradient"></div>
+
+  <div class="container" style="max-width: 500px; padding-top: 80px;">
+    <div class="card">
+
+      <div style="text-align:center; margin-bottom: 25px;">
+        <div class="logo" style="font-size: 38px;">✨ vibe</div>
+        <p class="muted" style="margin-top: 10px;">welcome back! login to continue 💫</p>
+      </div>
+
+      {% if error %}
+        <p style="color: #ff4d6d; font-weight: 700; text-align:center; margin-bottom: 15px;">
+          {{ error }}
+        </p>
+      {% endif %}
+
+      <form method="POST">
+        {% csrf_token %}
+
+        <div style="margin-bottom: 15px;">
+          <label style="display:block; margin-bottom: 8px; color: rgba(255,255,255,0.8); font-weight:600;">
+            Username
+          </label>
+          <input
+            type="text"
+            name="username"
+            placeholder="enter username"
+            required
+            style="width:100%; padding:14px 18px; border-radius:16px; border:1px solid rgba(255,255,255,0.12);
+              background: rgba(255,255,255,0.05); color:white; outline:none;"
+          />
+        </div>
+
+        <div style="margin-bottom: 18px;">
+          <label style="display:block; margin-bottom: 8px; color: rgba(255,255,255,0.8); font-weight:600;">
+            Password
+          </label>
+          <input
+            type="password"
+            name="password"
+            placeholder="enter password"
+            required
+            style="width:100%; padding:14px 18px; border-radius:16px; border:1px solid rgba(255,255,255,0.12);
+              background: rgba(255,255,255,0.05); color:white; outline:none;"
+          />
+        </div>
+
+        <button type="submit" class="btn" style="width:100%; margin-left: 0;">
+          login 🚀
+        </button>
+      </form>
+
+      <p class="muted" style="text-align:center; margin-top: 18px;">
+        don't have an account?
+        <a href="{% url 'register' %}" style="color:#ff64c8; font-weight:700;">create one</a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>

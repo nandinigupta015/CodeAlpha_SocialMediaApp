@@ -1,0 +1,59 @@
+{% extends "core/base.html" %}
+{% block title %}Profile - Vibe{% endblock %}
+
+{% block content %}
+<div class="card">
+  <div class="profile-section">
+    <div class="profile-avatar">{{ profile_user.username|slice:":2"|upper }}</div>
+    <div class="profile-name">{{ profile_user.username }}</div>
+    <div class="profile-handle">@{{ profile_user.username }}</div>
+
+    <div class="profile-stats">
+      <div class="stat">
+        <div class="stat-number">{{ posts_count }}</div>
+        <div class="stat-label">posts</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">{{ followers_count }}</div>
+        <div class="stat-label">followers</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">{{ following_count }}</div>
+        <div class="stat-label">following</div>
+      </div>
+    </div>
+
+    {% if request.user != profile_user %}
+    <form method="POST" action="{% url 'toggle_follow' profile_user.username %}" style="margin-top: 20px;">
+      {% csrf_token %}
+      {% if is_following %}
+      <button class="btn danger" type="submit">unfollow</button>
+      {% else %}
+      <button class="btn" type="submit">follow</button>
+      {% endif %}
+    </form>
+    {% endif %}
+  </div>
+</div>
+
+<a class="btn-outline" href="{% url 'home' %}">← back to feed</a>
+
+<div class="card" style="margin-top:20px;">
+  <h2 class="section-title">posts by @{{ profile_user.username }}</h2>
+
+  {% for post in posts %}
+    <div class="post">
+      <div class="post-content">{{ post.content }}</div>
+      {% if post.image %}
+        <img src="{{ post.image.url }}" class="post-image" alt="Post image">
+      {% endif %}
+      <div class="post-actions">
+        <span class="action-btn">❤️ {{ post.like_count }}</span>
+        <span class="action-btn">💬 {{ post.comment_count }}</span>
+      </div>
+    </div>
+  {% empty %}
+    <p class="muted">No posts yet.</p>
+  {% endfor %}
+</div>
+{% endblock %}
