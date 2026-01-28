@@ -61,36 +61,43 @@ CodeAlpha_SocialMediaApp/
 │
 ├── manage.py
 └── requirements.txt
-⚙️ Setup & Installation
+```
+### ⚙️ Setup & Installation
+
 ✅ 1. Clone the Repository
+```
 git clone https://github.com/nandinigupta015/CodeAlpha_SocialMediaApp.git
 cd CodeAlpha_SocialMediaApp
-
+```
 ✅ 2. Create Virtual Environment
+```
 python -m venv venv
-
+```
 
 Activate it:
 
 Windows
-
+```
 venv\Scripts\activate
-
+```
 
 Mac/Linux
-
+```
 source venv/bin/activate
-
+```
 ✅ 3. Install Dependencies
+```
 pip install -r requirements.txt
-
+```
 ✅ 4. Run Migrations
+```
 python manage.py makemigrations
 python manage.py migrate
-
+```
 ✅ 5. Run the Project
+```
 python manage.py runserver
-
+```
 
 Open in browser:
 👉 http://127.0.0.1:8000/
@@ -100,13 +107,14 @@ Open in browser:
 The project includes a seed script to generate dummy accounts & posts.
 
 ✅ Run Seeder
+```
 python manage.py shell -c "from core.seed import run; run()"
-
+```
 
 ✅ Password for all dummy users:
-
+```
 12345678
-
+```
 
 Example usernames:
 
