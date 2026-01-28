@@ -1,41 +1,48 @@
-# ✨ Vibe — Social Media Platform (CodeAlpha Internship Task)
+# Vibe — Social Media Platform
 
-Vibe is a mini social media platform built as part of the **CodeAlpha Full Stack Development Internship (Task 2)**.  
-It allows users to create posts, upload images, like posts, comment in real-time, and follow other users — all inside a clean modern UI.
+## CodeAlpha Full Stack Development Internship | Task 2
 
----
+Vibe is a mini social media platform developed as part of the CodeAlpha Full Stack Development Internship.
+It allows users to create posts with images, like and comment in real time, follow other users, and interact through a clean, modern, responsive UI.
+
+This project demonstrates full-stack development skills using Django, JavaScript (AJAX), and modern UI design principles.
 
 ## 🚀 Features
 
-✅ User Authentication (Register / Login / Logout)  
-✅ Create Post (Text + Image Upload)  
-✅ View Feed (All posts in reverse chronological order)  
-✅ Like / Unlike Posts (AJAX)  
-✅ Comment on Posts (AJAX + instant UI update)  
-✅ Follow / Unfollow Users  
-✅ User Profile Page (Posts + Followers + Following stats)  
-✅ Responsive Modern UI (Glassmorphism + Gradient Theme)
+User Authentication (Register / Login / Logout)
 
----
+Create Posts (Text + Image Upload)
+
+Global Feed (Reverse chronological order)
+
+Like / Unlike Posts (AJAX-based, instant updates)
+
+Comment on Posts (AJAX + real-time UI update)
+
+Follow / Unfollow Users
+
+User Profile Pages (Posts, Followers, Following)
+
+Responsive Modern UI (Glassmorphism + Gradient theme)
 
 ## 🛠 Tech Stack
-
 ### Frontend
-- HTML
-- CSS
-- JavaScript
+
+HTML
+
+CSS
+
+JavaScript (AJAX)
 
 ### Backend
-- Django (Python)
+
+Django (Python)
 
 ### Database
-- SQLite (Default Django DB)
 
----
+SQLite (Default Django database)
 
 ## 📂 Project Structure
-
-```txt
 CodeAlpha_SocialMediaApp/
 │
 ├── core/
@@ -61,62 +68,61 @@ CodeAlpha_SocialMediaApp/
 │
 ├── manage.py
 └── requirements.txt
-```
-### ⚙️ Setup & Installation
 
-✅ 1. Clone the Repository
+## ⚙️ Setup & Installation
+### 1️⃣ Clone the Repository
 ```
 git clone https://github.com/nandinigupta015/CodeAlpha_SocialMediaApp.git
 cd CodeAlpha_SocialMediaApp
 ```
-✅ 2. Create Virtual Environment
+### 2️⃣ Create & Activate Virtual Environment
 ```
 python -m venv venv
 ```
 
-Activate it:
+Activate:
 
-Windows
+Windows:
 ```
 venv\Scripts\activate
 ```
 
-Mac/Linux
+macOS / Linux:
 ```
 source venv/bin/activate
 ```
-✅ 3. Install Dependencies
+### 3️⃣ Install Dependencies
 ```
 pip install -r requirements.txt
 ```
-✅ 4. Run Migrations
+### 4️⃣ Run Migrations
 ```
 python manage.py makemigrations
 python manage.py migrate
 ```
-✅ 5. Run the Project
+### 5️⃣ Run the Server
 ```
 python manage.py runserver
 ```
 
-Open in browser:
+### Open in browser:
 👉 http://127.0.0.1:8000/
 
 🔐 Dummy Users (For Testing)
 
-The project includes a seed script to generate dummy accounts & posts.
+The project includes a seed script to generate sample users and posts.
 
-✅ Run Seeder
+Run Seeder
 ```
 python manage.py shell -c "from core.seed import run; run()"
 ```
 
-✅ Password for all dummy users:
+Password for all dummy users:
 ```
 12345678
 ```
 
-Example usernames:
+Example Usernames:
 
 sarahj
 
@@ -128,13 +134,33 @@ alexzap
 
 moonchild
 
-👩‍💻 Author
+### 📸 Screenshots
+
+<img width="1920" height="785" alt="Screenshot (270)" src="https://github.com/user-attachments/assets/4de74036-8f8c-477e-af7a-488f403bf968" />
+
+
+<img width="1920" height="821" alt="Screenshot (268)" src="https://github.com/user-attachments/assets/437225a9-4c78-4df2-8a7f-11b89e16a64c" />
+
+
+<img width="1920" height="811" alt="Screenshot (269)" src="https://github.com/user-attachments/assets/d9886892-dbf6-4e4a-be28-e491db717edf" />
+
+
+### 📚 Key Learnings
+
+Django authentication & ORM
+
+AJAX-based dynamic updates
+
+Image upload handling
+
+User relationship modeling (followers/following)
+
+Full-stack integration & UI responsiveness
+
+### 👩‍💻 Author
 
 Nandini Gupta
 
-B.Tech CSE Student
+B.Tech Computer Science & Engineering Student
 
 GitHub: https://github.com/nandinigupta015/
-
-
----
